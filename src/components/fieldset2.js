@@ -20,7 +20,7 @@ class Fieldset2 extends Component {
       <label htmlFor="InputEmployment">
         Cargo :
         <textarea
-          onChange={({ target }) => this.props.emprego(target.checked)}
+          onChange={({ target }) => this.props.emprego(target.value)}
           maxLength="40"
           required
         />
@@ -33,7 +33,7 @@ class Fieldset2 extends Component {
       <label htmlFor="InputEmploymentDescription">
         Descrição do Cargo :
         <textarea
-          onChange={({ target }) => this.props.descricaoDeEmprego(target.checked)}
+          onChange={({ target }) => this.props.descricaoDeEmprego(target.value)}
           maxLength="500"
           required
         />

@@ -26,9 +26,9 @@ export default function reducer(state = INITIAL_STATE, action) {
     case "CHANGE_CITY":
       return { ...state, city: action.city };
     case "CHECK_HOUSE":
-      return { ...state, house: action.house };
+      return { ...state, house: action.house, apartment: false };
     case "CHECK_APARTMENT":
-      return { ...state, apartment: action.apartment, house: action.house};
+      return { ...state, apartment: action.apartment, house: false};
     case "CHANGE_DESCRIÇÃO_EMAIL":
       return { ...state, descricaoDeEmprego: action.descricaoDeEmprego };
     case "CHANGE_EMPREGO":
