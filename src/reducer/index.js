@@ -11,6 +11,7 @@ const INITIAL_STATE = {
   emprego: "",
   descricaoDeEmprego: "",
   curriculo: "",
+  estado: ""
 };
 
 export default function reducer(state = INITIAL_STATE, action) {
@@ -35,6 +36,8 @@ export default function reducer(state = INITIAL_STATE, action) {
       return { ...state, emprego: action.emprego };
     case "CHANGE_CURRICULO":
       return { ...state, curriculo: action.curriculo };
+      case "CHANGE_LOCATION":
+        return { ...state, estado: action.estado };
     default:
       return state;
   }

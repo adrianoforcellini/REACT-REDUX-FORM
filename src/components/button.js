@@ -35,10 +35,9 @@ function handleSubmit(){
                     "<p>" + Object.keys(print)[6].toString()+ " : " + Object.values(print)[6].toString() +"</p>" + "<br>" +
                     "<p>" + Object.keys(print)[7].toString()+ " : " + Object.values(print)[7].toString() +"</p>" + "<br>" +
                     "<p>" + Object.keys(print)[8].toString()+ " : " + Object.values(print)[8].toString() +"</p>" + "<br>" +
-                    "<p>" + Object.keys(print)[9].toString()+ " : " + Object.values(print)[9].toString() +"</p>" + "<br>" 
-                              
-
-
+                    "<p>" + Object.keys(print)[9].toString()+ " : " + Object.values(print)[9].toString() +"</p>" + "<br>" +
+                    "<p>" + Object.keys(print)[10].toString()+ " : " + Object.values(print)[10].toString() +"</p>" + "<br>" 
+     
 }
   
 
