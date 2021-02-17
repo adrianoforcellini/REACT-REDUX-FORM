@@ -10,7 +10,7 @@ class Fieldset1 extends Component {
         Nome :
         <input
           type="text"
-          onChange={({ target }) => this.props.name(target.value)}
+          onChange={({ target }) => this.props.Nome(target.value)}
           name="name"
           maxLength="40"
           required
@@ -25,7 +25,7 @@ class Fieldset1 extends Component {
         E-mail :
         <input
           type="email"
-          onChange={({ target }) => this.props.email(target.value)}
+          onChange={({ target }) => this.props.Email(target.value)}
           name="email"
           maxLength="50"
           required
@@ -55,7 +55,7 @@ class Fieldset1 extends Component {
         Endereço :
         <textarea
           name="adress"
-          onChange={({ target }) => this.props.adress(target.value)}
+          onChange={({ target }) => this.props.Endereço(target.value)}
           maxLength="200"
           required
         />
@@ -69,7 +69,7 @@ class Fieldset1 extends Component {
         Cidade :
         <input
           type="text"
-          onChange={({ target }) => this.props.city(target.value)}
+          onChange={({ target }) => this.props.Cidade(target.value)}
           name="city"
           maxLength="28"
           required
@@ -84,21 +84,22 @@ class Fieldset1 extends Component {
         <input
           type="radio"
           name="house"
-          onClick={({ target }) => this.props.house(target.checked)}
+          onClick={({ target }) => this.props.Casa(target.checked)}
           />
         Casa
         <input
           type="radio"
           name="house"
-          onClick={({ target }) => this.props.apartment(target.checked)}
+          onClick={({ target }) => this.props.Apartamento(target.checked)}
         />
         Apartamento
       </div>
     );
   }
+
 inputState() {
   return (
-   <select onChange={({ target }) => this.props.estado(target.value)}
+   <select onChange={({ target }) => this.props.Estado(target.value)}
     name="estados-brasil">
 	<option value="AC">Acre</option>
 	<option value="AL">Alagoas</option>
@@ -135,9 +136,9 @@ inputState() {
         {this.inputName()}
         {this.inputEmail()}
         {this.inputCPF()}
+        {this.inputCity()}
         {this.inputAdress()}
         {this.inputState()}
-        {this.inputCity()}
         {this.radioHouse()}
       </fieldset>
     );
@@ -147,25 +148,26 @@ inputState() {
 
 // short hand object JS => procurar no MDN
 const mapStateToProps = (state) => ({
-  name: state.name,
-  email: state.email,
+  Nome: state.Nome,
+  Email: state.Email,
   CPF: state.CPF,
-  adress: state.adress,
-  city: state.city,
+  Endereço: state.Endereço,
+  Cidade: state.Cidade,
   house: state.house,
   apartment: state.apartment,
-  estado: state.estado
+  Estado: state.Estado
 });
 
+
 const mapDispatchToProps = (dispatch) => ({
-  name: (name) => dispatch({ type: "CHANGE_NAME", name }),
-  email: (email) => dispatch({ type: "CHANGE_EMAIL", email }),
+  Nome: (Nome) => dispatch({ type: "CHANGE_NAME", Nome }),
+  Email: (Email) => dispatch({ type: "CHANGE_EMAIL", Email }),
   CPF: (CPF) => dispatch({ type: "CHANGE_CPF", CPF }),
-  city: (city) => dispatch({ type: "CHANGE_CITY", city  }),
-  adress: (adress) => dispatch({ type: "CHANGE_ADRESS", adress }),
-  house: (house, apartment) => dispatch({ type: "CHECK_HOUSE", house, apartment }),
-  apartment: (apartment, house) => dispatch({ type: "CHECK_APARTMENT", apartment, house }),
-  estado :(estado) => dispatch({ type: "CHANGE_LOCATION", estado }),
+  Cidade: (Cidade) => dispatch({ type: "CHANGE_CITY", Cidade  }),
+  Endereço: (Endereço) => dispatch({ type: "CHANGE_ADRESS", Endereço }),
+  Casa: (Casa, Apartamento) => dispatch({ type: "CHECK_HOUSE", Casa, Apartamento }),
+  Apartamento: (Apartamento, Casa) => dispatch({ type: "CHECK_APARTMENT", Apartamento, Casa }),
+  Estado :(Estado) => dispatch({ type: "CHANGE_LOCATION", Estado }),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Fieldset1);

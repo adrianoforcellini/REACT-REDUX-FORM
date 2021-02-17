@@ -7,7 +7,7 @@ class Fieldset2 extends Component {
       <label htmlFor="InputCurriulum">
         Curriculo :
         <textarea
-          onChange={({ target }) => this.props.curriculo(target.value)}
+          onChange={({ target }) => this.props.Currículo(target.value)}
           maxLength="1000"
           required
         />
@@ -20,7 +20,7 @@ class Fieldset2 extends Component {
       <label htmlFor="InputEmployment">
         Cargo :
         <textarea
-          onChange={({ target }) => this.props.emprego(target.value)}
+          onChange={({ target }) => this.props.Emprego(target.value)}
           maxLength="40"
           required
         />
@@ -33,7 +33,7 @@ class Fieldset2 extends Component {
       <label htmlFor="InputEmploymentDescription">
         Descrição do Cargo :
         <textarea
-          onChange={({ target }) => this.props.descricaoDeEmprego(target.value)}
+          onChange={({ target }) => this.props.Descrição_do_Emprego(target.value)}
           maxLength="500"
           required
         />
@@ -53,15 +53,16 @@ class Fieldset2 extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  curriculo: state.curriculo,
-  descricaoDeEmprego: state.descricaoDeEmprego,
-  emprego: state.emprego,
+  Currículo: state.Currículo,
+  Descrição_do_Emprego: state.Descrição_do_Emprego,
+  Emprego: state.Emprego,
  });
 
+
 const mapDispatchToProps = (dispatch) => ({
-  curriculo: (curriculo) => dispatch({ type: "CHANGE_CURRICULO", curriculo }),
-  descricaoDeEmprego: (descricaoDeEmprego) => dispatch({ type: "CHANGE_DESCRIÇÃO_EMAIL", descricaoDeEmprego }),
-  emprego: (emprego) => dispatch({ type: "CHANGE_EMPREGO", emprego }),
+  Currículo: (Currículo) => dispatch({ type: "CHANGE_CURRICULO", Currículo }),
+  Descrição_do_Emprego: (Descrição_do_Emprego) => dispatch({ type: "CHANGE_DESCRIÇÃO_EMPREGO", Descrição_do_Emprego }),
+  Emprego: (Emprego) => dispatch({ type: "CHANGE_EMPREGO", Emprego }),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Fieldset2);
