@@ -11,7 +11,7 @@ const INITIAL_STATE = {
   emprego: "",
   descricaoDeEmprego: "",
   curriculo: "",
-  estado: ""
+  estado: "",
 };
 
 export default function reducer(state = INITIAL_STATE, action) {
@@ -29,15 +29,15 @@ export default function reducer(state = INITIAL_STATE, action) {
     case "CHECK_HOUSE":
       return { ...state, house: action.house, apartment: false };
     case "CHECK_APARTMENT":
-      return { ...state, apartment: action.apartment, house: false};
+      return { ...state, apartment: action.apartment, house: false };
     case "CHANGE_DESCRIÇÃO_EMAIL":
       return { ...state, descricaoDeEmprego: action.descricaoDeEmprego };
     case "CHANGE_EMPREGO":
       return { ...state, emprego: action.emprego };
     case "CHANGE_CURRICULO":
       return { ...state, curriculo: action.curriculo };
-      case "CHANGE_LOCATION":
-        return { ...state, estado: action.estado };
+    case "CHANGE_LOCATION":
+      return { ...state, estado: action.estado };
     default:
       return state;
   }
